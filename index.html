@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Switch toggle</title>
+
+    <style>
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 30vh;
+        }
+
+        .dark {
+            background: black;
+            color: white;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .switch-toggle {
+            width: 90px;
+            height: 50px;
+            appearance: none;
+            background-color: bisque;
+            border-radius: 34px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .switch-toggle::before {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background-color: rgb(118, 124, 219);
+            position: absolute;
+            border-radius: 34px;
+            top: 5px;
+            left: 3px;
+            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .switch-toggle:checked {
+            background-color: rgb(114, 114, 124);
+        }
+
+        .switch-toggle:checked::before {
+            left: 45px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <span>Light</span>
+        <input type="checkbox" class="switch-toggle" id="btn" onclick="document.body.classList.toggle('dark')">
+        <span>Dark</span>
+    </div>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button id="btn1" onclick="click()">Click here</button>
+    <script src="./main.js"></script>
+</body>
+
+</html>

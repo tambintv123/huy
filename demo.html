@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      li {
+        list-style: none;
+      }
+      ul {
+        display: flex;
+        gap: 20px;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+      img {
+        width: 100%;
+        height: 100vh;
+      }
+      .manhinhnho {
+        display: none;
+        position: relative;
+      }
+
+      .menu_manhinhnho {
+        position: absolute;
+        padding: 10px;
+        top: 30px;
+        background-color: white;
+        color: black;
+        right: 3px;
+        width: 155px;
+        opacity: 0;
+        transition: all 0.5s;
+        height: 0;
+      }
+      .showMenu {
+        opacity: 1;
+        height: 140px;
+      }
+      @media screen and (max-width: 665px) {
+        .manhinhnho {
+          display: block;
+        }
+        nav {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="logo">demo</div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">home</a>
+            </li>
+            <li>
+              <a href="#">home</a>
+            </li>
+            <li>
+              <a href="#">home</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="manhinhnho">
+          <button class="menu">Click To Show Menu</button>
+          <div class="menu_manhinhnho">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="carousel">
+      <img
+        src="https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg"
+        alt=""
+      />
+    </div>
+    <div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let header = document.getElementById("header");
+      window.addEventListener("scroll", function () {
+        let sclY = this.scrollY; //scroll theo chieu doc
+        if (sclY > 0) {
+          header.style.height = "70px";
+          header.style.backgroundColor = `red`;
+          header.style.paddingTop = `0px`;
+          header.style.boxShadow = `0 3px 6px 0 rgb(0 0 0 / 7%)`;
+          header.style.transition = `all 0.65s`;
+          header.style.zIndex = `5`;
+          header.style.position = `fixed`;
+          header.style.width = "100%";
+        } else {
+          header.style.height = "90px";
+          header.style.backgroundColor = `transparent`;
+          header.style.transition = `all 0.65s`;
+          header.style.zIndex = `4`;
+          header.style.position = `absolute`;
+          header.style.boxShadow = `none`;
+          header.style.width = "100%";
+        }
+      });
+
+      document.querySelector(".menu").addEventListener("click", function () {
+        document.querySelector(".menu_manhinhnho").classList.toggle("showMenu");
+      });
+    </script>
+  </body>
+</html>
